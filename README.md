@@ -18,6 +18,8 @@
 - LeetCode: https://leetcode.com/
 - HackerRank: https://www.hackerrank.com/
 - Interview Cake: https://www.interviewcake.com/
+- Visualgo: https://visualgo.net/en
+- Python tutor: https://pythontutor.com
 
 ### YouTube channels | 
 - Neetcode: https://www.youtube.com/@NeetCode
