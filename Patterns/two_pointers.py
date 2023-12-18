@@ -28,6 +28,7 @@ def pair_with_targetsum(arr, target_sum):
 			right -= 1 # move the right pointer to get a smaller sum
 
 	return [-1, -1] #  If the loop finishes iterating without finding any pair whose sum equals the target sum, it means no such pair exists in the array. In this case, we return [-1, -1] to indicate that no valid pair was found.
+    # Essentially, [-1, -1] signifies that the search for the desired pair within the given constraints was unsuccessful. This is a commonly used convention in such algorithms to differentiate between a successful lookup and a failed one.
 
 # test our code
 def main():
