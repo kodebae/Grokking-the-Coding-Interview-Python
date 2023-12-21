@@ -1,47 +1,20 @@
 # Two Pointers
 
-# Understanding the concept:
-
-# Visualize the pointers: Draw diagrams or use online tools to visualize the movement of the pointers and how they interact with the data structure. This can help solidify the logic and identify potential edge cases.
-# Grasp the problem type: Analyze the problem and identify whether it involves searching, sorting, finding patterns, or other specific tasks. This helps you choose the appropriate two-pointer technique variation.
-# Break down the algorithm: Don't be intimidated by complex-looking solutions. Break them down into smaller steps and understand the purpose of each pointer movement and comparison.
-
-#  Applying the pattern effectively:
-
-# Choose the right direction: Depending on the problem, you might move the pointers from both ends inwards, outwards from the start, or in opposite directions. Analyze the data structure and target to determine the most efficient direction.
-# Set clear conditions: Define clear conditions for moving each pointer and for exiting the loop. This ensures the pointers stop at the desired positions and avoid infinite loops.
-# Consider edge cases: Test your code on various input scenarios, including empty data, duplicates, extreme values, and specific requirements of the problem.
-# Practice explaining your solution: Be able to articulate the purpose of each pointer movement and the logic behind your comparisons. This is crucial for technical interviews and demonstrates your understanding of the algorithm.
-
-# TIPS:
-# If an array is sorted, an efficient way would be to start with one pointer in the beginning and another pointer at the end.
-# If array is in ascending order, to get larger sum, increase starting pointer. Smaller sum, decrease end pointer.
-
-# Edge Cases for Week 1:
-# Two Pointers(Specific edge cases will depend on the exact pattern, but here are some common ones to consider):
-
-# Empty input data: What happens if there are no elements in the data structure?
-# Single element input: How does your solution handle data with only one element?
-# Duplicates in the data: Does your solution account for duplicate elements and how should it handle them?
-# Extreme values: How does your solution behave with very large or very small values (e.g., overflows, underflows)?
-# Null or invalid inputs: How should your code handle unexpected or invalid input values?
-
-
-# Problems:
+### Problems #########################################################################################
 
 # Pair with a target sum: A good example of two pointers that start at opposite ends
 
 def pair_with_targetsum(arr, target_sum):
 
-    left, right = 0, len(arr)-1
+	left, right = 0, len(arr)-1
     
-    while(left < right): # The loop iterates as long as left is less than right.
+    while(left < right): # The loop iterates as long as left is less than right
 
-	    current_sum = arr[left] + arr[right] # Inside the loop, we calculate the current sum by adding the elements at left and right indices.
+		current_sum = arr[left] + arr[right] # Inside the loop, we calculate the current sum by adding the elements at left and right indices.
 
 		if current_sum == target_sum: # We found the pair! We return [left, right] to indicate their positions.
 
-	        return [left, right]
+	    	return [left, right]
 
 		if target_sum > current_sum: # This means the current pair's sum is smaller than the target. We need a pair with a bigger sum, so we increment left to move to the next element on the left side.
 
@@ -98,9 +71,11 @@ def remove_duplicates(arr):
 # test our code 
 def main():
 
-print(remove_duplicates([2, 3, 3, 3, 6, 9, 9]))
+	print(remove_duplicates([2, 3, 3, 3, 6, 9, 9]))
 
-print(remove_duplicates([2, 2, 2, 11]))
+	print(remove_duplicates([2, 2, 2, 11]))
+
+main()
 
 # This code removes duplicates from an array but may not address some edge cases. Some potential edge cases to consider:
 # Empty array: The function assumes the array has at least one element. If the array is empty, the loop won't run, and next_non_duplicate remains at 1, which might be misleading. You could add a check before the loop and handle the empty case explicitly.
@@ -151,7 +126,35 @@ def main():
 
 main()
 
-# Notes: Squaring in "non-decreasing" order, means that the array is sorted in ascending value, but the values can contain duplicates. 
+###################################################################################################
+
+# Notes: 
+# Understanding the concept:
+
+# Visualize the pointers: Draw diagrams or use online tools to visualize the movement of the pointers and how they interact with the data structure. This can help solidify the logic and identify potential edge cases.
+# Grasp the problem type: Analyze the problem and identify whether it involves searching, sorting, finding patterns, or other specific tasks. This helps you choose the appropriate two-pointer technique variation.
+# Break down the algorithm: Don't be intimidated by complex-looking solutions. Break them down into smaller steps and understand the purpose of each pointer movement and comparison.
+
+#  Applying the pattern effectively:
+
+# Choose the right direction: Depending on the problem, you might move the pointers from both ends inwards, outwards from the start, or in opposite directions. Analyze the data structure and target to determine the most efficient direction.
+# Set clear conditions: Define clear conditions for moving each pointer and for exiting the loop. This ensures the pointers stop at the desired positions and avoid infinite loops.
+# Consider edge cases: Test your code on various input scenarios, including empty data, duplicates, extreme values, and specific requirements of the problem.
+# Practice explaining your solution: Be able to articulate the purpose of each pointer movement and the logic behind your comparisons. This is crucial for technical interviews and demonstrates your understanding of the algorithm.
+
+# TIPS:
+# If an array is sorted, an efficient way would be to start with one pointer in the beginning and another pointer at the end.
+# If array is in ascending order, to get larger sum, increase starting pointer. Smaller sum, decrease end pointer.
+
+# Edge Cases for Week 1:
+# Two Pointers(Specific edge cases will depend on the exact pattern, but here are some common ones to consider):
+
+# Empty input data: What happens if there are no elements in the data structure?
+# Single element input: How does your solution handle data with only one element?
+# Duplicates in the data: Does your solution account for duplicate elements and how should it handle them?
+# Extreme values: How does your solution behave with very large or very small values (e.g., overflows, underflows)?
+# Null or invalid inputs: How should your code handle unexpected or invalid input values?
+# Squaring in "non-decreasing" order, means that the array is sorted in ascending value, but the values can contain duplicates. 
 # Empty array: If the input array is empty, the loop won't run, and you might need to handle this case explicitly by returning an empty array or a different indication.
 # All elements the same: If all elements in the array are the same, the loop will continue iterating, but no values will be swapped. This will result in the squares array filled with the same squared value multiple times, which might not be the desired outcome. You could modify the logic to break the loop early if no element has been chosen after a certain number of iterations.
 # Overflow: With very large integers or negative values, calculating the squares could potentially lead to integer overflows. Consider using alternative data structures like unsigned integers or performing checks to avoid overflows during calculation.
